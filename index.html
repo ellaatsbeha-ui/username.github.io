@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henri's Reflections</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1624;
+      color: white;
+    }
+    header {
+      background-color: #3b1566;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    header h1 {
+      font-size: 1.2em;
+      margin: 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .btn {
+      background: white;
+      color: #3b1566;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #ddd;
+    }
+    .hero {
+      text-align: center;
+      background: #2a1c3c;
+      padding: 20px;
+    }
+    .hero img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+    }
+    section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    section img {
+      max-width: 40%;
+      border-radius: 10px;
+    }
+    section div {
+      max-width: 50%;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #3b1566;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Henri's Reflections</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Essays</a>
+    </nav>
+    <button class="btn">Read More</button>
+  </header>
+
+  <div class="hero">
+    <img src="book.jpg" alt="Political Essays Book">
+  </div>
+
+  <section>
+    <div>
+      <h2>Insights into politics, philosophy, theology, and entertainment.</h2>
+      <p>Exploring my personal reflections on various thought-provoking topics.</p>
+      <button class="btn">Discover more</button>
+    </div>
+    <img src="coffee.jpg" alt="Coffee by the window">
+  </section>
+
+  <section>
+    <div>
+      <h2>Writing that connects ideas with daily life.</h2>
+      <p>From theology to popular culture, I reflect on the intersections that shape our understanding of the world.</p>
+    </div>
+    <img src="book.jpg" alt="Stack of books">
+  </section>
+
+  <footer>
+    © 2025 Henri's Reflections
+  </footer>
+</body>
+</html>
