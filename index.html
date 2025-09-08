@@ -3,120 +3,289 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ella's Reflections</title>
+  <title>Reflections Site</title>
   <style>
-    body {
+    /* General Reset */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1c1624;
-      color: white;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #2b2234; /* dark purple */
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* Header */
     header {
-      background-color: #3b1566;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
+      padding: 20px 60px;
+      background-color: #4a2e7a;
     }
-    header h1 {
-      font-size: 1.2em;
-      margin: 0;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: white;
+
+    header .logo {
       font-weight: bold;
+      font-size: 18px;
     }
-    nav a:hover {
+
+    header nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    header nav a:hover {
       text-decoration: underline;
     }
-    .btn {
+
+    header .btn {
       background: white;
-      color: #3b1566;
-      border: none;
+      color: #2b2234;
       padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 14px;
       font-weight: bold;
     }
-    .btn:hover {
-      background: #ddd;
-    }
-    .hero {
-      text-align: center;
-      background: #2a1c3c;
-      padding: 20px;
-    }
+
+    /* Hero */
     .hero img {
-      max-width: 100%;
-      border-radius: 10px;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
     }
-    section {
+
+    /* About Section */
+    .about {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 60px 10%;
+      padding: 60px;
     }
-    section:nth-child(even) {
-      flex-direction: row-reverse;
+
+    .about-text {
+      flex: 1;
+      padding-right: 40px;
     }
-    section img {
-      max-width: 40%;
-      border-radius: 10px;
+
+    .about-text h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
     }
-    section div {
-      max-width: 50%;
-    }
-    h2 {
-      font-size: 2em;
+
+    .about-text p {
+      font-size: 15px;
       margin-bottom: 20px;
+      color: #d3cfe3;
     }
-    footer {
+
+    .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .btn {
+      background: white;
+      color: #2b2234;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #d3cfe3;
+    }
+
+    /* Analysis Section */
+    .analysis {
+      display: flex;
+      justify-content: flex-end;
+      padding: 40px 60px;
+    }
+
+    .analysis-image {
+      max-width: 400px;
       text-align: center;
-      padding: 20px;
-      background: #3b1566;
-      font-size: 0.9em;
+    }
+
+    .analysis-image img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .analysis-image .caption {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #d3cfe3;
+    }
+
+    /* Reflections Section */
+    .reflections {
+      background: #1c1922;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .reflections h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .reflections p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .subscribe-form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .subscribe-form input {
+      padding: 12px;
+      border-radius: 5px;
+      border: none;
+      width: 250px;
+    }
+
+    .subscribe-form button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      background: white;
+      color: #2b2234;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .subscribe-form button:hover {
+      background: #d3cfe3;
+    }
+
+    /* Footer */
+    footer {
+      background: #eae8f1;
+      color: #2b2234;
+      padding: 40px 60px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      color: #2b2234;
+      text-decoration: none;
+    }
+
+    .footer-column a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>Ella's Reflections</h1>
+    <div class="logo">MySite</div>
     <nav>
       <a href="#">Home</a>
       <a href="#">About</a>
+      <a href="#">Blog</a>
       <a href="#">Contact</a>
-      <a href="#">Essays</a>
     </nav>
-    <button class="btn">Read More</button>
+    <a href="#" class="btn">Get Started</a>
   </header>
 
-  <div class="hero">
-    <img src="book.jpg" alt="Political Essays Book">
-  </div>
-
-  <section>
-    <div>
-      <h2>Insights into politics, philosophy, theology, and entertainment.</h2>
-      <p>Exploring my personal reflections on various thought-provoking topics.</p>
-      <button class="btn">Discover more</button>
-    </div>
-    <img src="coffee.jpg" alt="Coffee by the window">
+  <!-- Hero -->
+  <section class="hero">
+    <img src="hero.jpg" alt="Hero Image">
   </section>
 
-  <section>
-    <div>
-      <h2>Writing that connects ideas with daily life.</h2>
-      <p>From theology to popular culture, I reflect on the intersections that shape our understanding of the world.</p>
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-text">
+      <h2>About My Work</h2>
+      <p>I explore various topics through writing and reflection, offering insights into culture, society, and personal growth.</p>
+      <a href="#" class="btn">Learn More</a>
     </div>
-    <img src="book.jpg" alt="Stack of books">
+    <div class="about-image">
+      <img src="about.jpg" alt="About Image">
+    </div>
   </section>
 
+  <!-- Analysis Section -->
+  <section class="analysis">
+    <div class="analysis-image">
+      <img src="soccer.jpg" alt="Soccer Ball">
+      <p class="caption">
+        Analyzing cultural phenomena and what they reveal about our collective mindset.
+      </p>
+    </div>
+  </section>
+
+  <!-- Reflections Section -->
+  <section class="reflections">
+    <div class="reflections-text">
+      <h2>Personal reflections on society and thought</h2>
+      <p>Exploring my thoughts on politics, philosophy, and theology, revealing what I believe truly matters.</p>
+      
+      <form class="subscribe-form">
+        <input type="email" placeholder="Type your email..." required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    © 2025 Ella's Reflections
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>123 Example Street<br>San Francisco, CA 12345</p>
+        <p>contact@reflectionsit​e.com | (555) 123-4567</p>
+        <p>Designed with <a href="#">WordPress</a></p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Hours</h4>
+        <p>Monday—Sunday, 8am–10pm</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Social</h4>
+        <p><a href="#">Facebook</a><br>
+           <a href="#">Instagram</a><br>
+           <a href="#">TikTok</a></p>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
-
-
