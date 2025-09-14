@@ -1,0 +1,130 @@
+/* General Layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1c1624;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #3b1566;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+  background: white;
+  color: #3b1566;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #ddd;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  background: #2a1c3c;
+  padding: 20px;
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Content Sections */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+section img {
+  max-width: 40%;
+  min-width: 280px;
+  border-radius: 10px;
+}
+
+section div {
+  max-width: 50%;
+  min-width: 280px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #3b1566;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin: 15px 0;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.4em;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
