@@ -128,3 +128,17 @@ footer a:hover {
 .social-icons a:hover {
   color: #ffcc00;
 }
+.page-content {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #2a1c3c;
+  border-radius: 10px;
+}
+.page-content h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+.page-content p {
+  font-size: 1.1em;
+}
