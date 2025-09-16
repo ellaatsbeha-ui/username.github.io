@@ -1,72 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ella's Reflections</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome for social media icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ella's Reflections</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .quote-mark {
+            font-size: 5rem;
+            line-height: 1;
+            opacity: 0.1;
+        }
+        /* Mobile menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.active {
+            max-height: 300px;
+        }
+        /* Placeholder images */
+        .placeholder-img {
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body>
-  <!-- Header -->
-  <header>
-    <h1>Ella's Reflections</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="theology.html">Theology</a>
-      <a href="movies.html">Movies</a>
-      <a href="politics.html">Politics</a>
-      <a href="football.html">Football</a>
-      <a href="videos.html">Videos</a>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-indigo-600">Ella's Reflections</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#theology" class="text-gray-700 hover:text-indigo-600 transition">Theology</a>
+                    <a href="#history" class="text-gray-700 hover:text-indigo-600 transition">History</a>
+                    <a href="#politics" class="text-gray-700 hover:text-indigo-600 transition">Politics</a>
+                    <a href="#movies" class="text-gray-700 hover:text-indigo-600 transition">Movies</a>
+                    <a href="#fiction" class="text-gray-700 hover:text-indigo-600 transition">Fiction</a>
+                    <a href="#football" class="text-gray-700 hover:text-indigo-600 transition">Football</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button" aria-label="Toggle menu">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu md:hidden bg-white border-t" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#theology" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition">Theology</a>
+                <a href="#history" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition">History</a>
+                <a href="#politics" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition">Politics</a>
+                <a href="#movies" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition">Movies</a>
+                <a href="#fiction" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition">Fiction</a>
+                <a href="#football" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition">Football</a>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <img src="book.jpg" alt="Political Essays Book">
-  </div>
+    <!-- Hero Section -->
+    <header class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Ella's Reflections</h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                    Exploring the intersections of faith, culture, and human experience through theology, history, politics, cinema, literature, and sport.
+                </p>
+            </div>
+        </div>
+    </header>
 
-  <!-- Section 1 -->
-  <section>
-    <div>
-      <h2>Insights into politics, philosophy, theology, and entertainment.</h2>
-      <p>Exploring my personal reflections on thought-provoking topics at the intersection of life, faith, and society.</p>
-      <button class="btn">Discover more</button>
-    </div>
-    <img src="coffee.jpg" alt="Coffee by the window">
-  </section>
+    <!-- Featured Quote -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="quote-mark">"</span>
+            <blockquote class="text-2xl md:text-3xl font-medium text-gray-800 mb-6" data-aos="fade-up">
+                The unexamined life is not worth living, but the over-examined life may be equally unlivable.
+            </blockquote>
+            <p class="text-gray-600" data-aos="fade-up" data-aos-delay="100">— A reflection on Socrates and modern analysis paralysis</p>
+        </div>
+    </section>
 
-  <!-- Section 2 -->
-  <section>
-    <div>
-      <h2>Writing that connects ideas with daily life.</h2>
-      <p>From theology to popular culture, I reflect on the intersections that shape our understanding of the world.</p>
-    </div>
-    <img src="library.jpg" alt="Library study space">
-  </section>
+    <!-- Categories Grid -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Explore My Perspectives</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Theology -->
+                <div id="theology" class="bg-white rounded-xl shadow-md overflow-hidden category-card transition duration-300" data-aos="fade-up">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i data-feather="book" class="w-16 h-16 text-indigo-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">Theology</h3>
+                        <p class="text-gray-600 mb-4">
+                            Contemplations on divine matters, sacred texts, and the intersection of faith with modern life.
+                        </p>
+                        <a href="#" class="text-indigo-600 font-medium inline-flex items-center">
+                            Read reflections <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
 
-  <!-- Section 3 -->
-  <section>
-    <div>
-      <h2>Exploring meaning in modern culture.</h2>
-      <p>Faith, movies, politics, and football — reflections on the things that shape both public and private life.</p>
-    </div>
-    <img src="stadium.jpg" alt="Football stadium at sunset">
-  </section>
+                <!-- History -->
+                <div id="history" class="bg-white rounded-xl shadow-md overflow-hidden category-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-amber-100 flex items-center justify-center">
+                        <i data-feather="clock" class="w-16 h-16 text-amber-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">History</h3>
+                        <p class="text-gray-600 mb-4">
+                            Examining the patterns of the past to understand our present and illuminate possible futures.
+                        </p>
+                        <a href="#" class="text-amber-600 font-medium inline-flex items-center">
+                            Read reflections <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>Support Ella's Reflections on <a href="https://patreon.com" target="_blank">Patreon</a></p>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-    <p>© 2025 Ella's Reflections</p>
-  </footer>
+                <!-- Politics -->
+                <div id="politics" class="bg-white rounded-xl shadow-md overflow-hidden category-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i data-feather="globe" class="w-16 h-16 text-red-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">Politics</h3>
+                        <p class="text-gray-600 mb-4">
+                            Analysis of power structures, policy decisions, and the philosophical underpinnings of governance.
+                        </p>
+                        <a href="#" class="text-red-600 font-medium inline-flex items-center">
+                            Read reflections <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Movies -->
+                <div id="movies" class="bg-white rounded-xl shadow-md overflow-hidden category-card transition duration-300" data-aos="fade-up">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i data-feather="film" class="w-16 h-16 text-purple-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">Movies</h3>
+                        <p class="text-gray-600 mb-4">
+                            Cinematic analysis exploring themes, symbolism, and the cultural impact of visual storytelling.
+                        </p>
+                        <a href="#" class="text-purple-600 font-medium inline-flex items-center">
+                            Read reflections <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fiction -->
+                <div id="fiction" class="bg-white rounded-xl shadow-md overflow-hidden category-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i data-feather="book-open" class="w-16 h-16 text-green-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">Fiction</h3>
+                        <p class="text-gray-600 mb-4">
+                            Literary explorations of character, narrative structure, and the human condition through imagined worlds.
+                        </p>
+                        <a href="#" class="text-green-600 font-medium inline-flex items-center">
+                            Read reflections <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Football -->
+                <div id="football" class="bg-white rounded-xl shadow-md overflow-hidden category-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i data-feather="activity" class="w-16 h-16 text-blue-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">Football</h3>
+                        <p class="text-gray-600 mb-4">
+                            The beautiful game as metaphor, cultural phenomenon, and arena for human drama and excellence.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium inline-flex items-center">
+                            Read reflections <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Reflections -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Latest Reflections</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up">
+                    <div class="placeholder-img w-full h-48">
+                        Theology Image
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-indigo-600">THEOLOGY</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Sacred Texts in a Secular Age</h3>
+                        <p class="text-gray-600 mb-4">
+                            How ancient scriptures maintain relevance when traditional religious frameworks are declining.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>June 12, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="placeholder-img w-full h-48">
+                        History Image
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-amber-600">HISTORY</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">The Renaissance of Forgotten Narratives</h3>
+                        <p class="text-gray-600 mb-4">
+                            Recovering marginalized voices in historical accounts and what they reveal about power structures.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>May 28, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="placeholder-img w-full h-48">
+                        Movies Image
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-purple-600">MOVIES</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Theology in Sci-Fi Cinema</h3>
+                        <p class="text-gray-600 mb-4">
+                            How films like Arrival and Interstellar explore profound theological questions through science fiction.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>May 15, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition">
+                    View All Reflections
+                    <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6">About Ella</h2>
+                    <p class="text-gray-300 mb-6">
+                        I'm a thinker, writer, and perpetual student of the human experience. My academic background spans theology, history, and political science, but my curiosity knows no bounds.
+                    </p>
+                    <p class="text-gray-300 mb-6">
+                        This space is where I explore the connections between seemingly disparate fields—how religious concepts manifest in modern politics, how historical patterns repeat in contemporary cinema, or how the drama of football reflects larger societal narratives.
+                    </p>
+                    <p class="text-gray-300">
+                        My approach is interdisciplinary, my tone is thoughtful but accessible, and my goal is to illuminate the hidden threads that connect our cultural tapestry.
+                    </p>
+                </div>
+                <div class="flex justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="w-64 h-64 bg-indigo-500 rounded-full opacity-20 absolute -top-6 -left-6"></div>
+                        <div class="w-64 h-64 bg-amber-500 rounded-full opacity-20 absolute -bottom-6 -right-6"></div>
+                        <div class="placeholder-img relative z-10 w-64 h-64 rounded-full shadow-xl">
+                            Ella's Photo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 bg-indigo-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-6">Join the Conversation</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Subscribe to receive my latest reflections directly to your inbox and participate in thoughtful discussions with other readers.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" id="newsletter-form">
+                <input type="email" placeholder="Your email address" required class="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                <button type="submit" class="px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition">
+                    Subscribe
+                </button>
+            </form>
+            <p class="text-sm text-gray-500 mt-3" id="form-message"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ella's Reflections</h3>
+                    <p class="text-gray-400">
+                        Exploring the depths of human thought across multiple disciplines.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#theology" class="text-gray-400 hover:text-white transition">Theology</a></li>
+                        <li><a href="#history" class="text-gray-400 hover:text-white transition">History</a></li>
+                        <li><a href="#politics" class="text-gray-400 hover:text-white transition">Politics</a></li>
+                        <li><a href="#movies" class="text-gray-400 hover:text-white transition">Movies</a></li>
+                        <li><a href="#fiction" class="text-gray-400 hover:text-white transition">Fiction</a></li>
+                        <li><a href="#football" class="text-gray-400 hover:text-white transition">Football</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Twitter">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Instagram">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="YouTube">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Get the latest reflections delivered to your inbox.
+                    </p>
+                    <button class="px-4 py-2 border border-white text-sm font-medium rounded-md text-white hover:bg-white hover:text-gray-900 transition" onclick="document.getElementById('newsletter-form').scrollIntoView({behavior: 'smooth'})">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2023 Ella's Reflections. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Initialize icons
+        feather.replace();
+        
+        // Mobile menu functionality
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+            
+            // Change icon based on state
+            const icon = this.querySelector('i');
+            if (menu.classList.contains('active')) {
+                feather.replace(icon, 'x');
+            } else {
+                feather.replace(icon, 'menu');
+            }
+        });
+        
+        // Form validation
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('form-message').textContent = 'Thank you for subscribing!';
+            this.reset();
+        });
+    </script>
 </body>
 </html>
